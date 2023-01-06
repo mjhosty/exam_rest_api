@@ -16,7 +16,7 @@ export const getStudents = async (req, res) => {
 export const getStudent = async (req, res) => {
     try {
         const { id } = req.params;
-        const student = await Student.findById(id);
+        const student = await Student.find({studentid: id});
         if(student)
             res.status(200).json(student);
         else
